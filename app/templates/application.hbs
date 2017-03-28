@@ -34,59 +34,55 @@
 </div>
 <div class="container">
   <div id="banner" class="page-header">
-    <div class="row">
-      <div class="col-lg-8 col-md-7 col-sm-6">
-        <h1>SpiralCode</h1>
-        <p class="lead">by madc0000w</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-md-9 col-sm-8">
-        {{outlet}}
-      </div>
-      <div class="col-xs-12 col-md-3 col-sm-4">
-        <div class="list-group table-of-contents">
-          {{#link-to "blog" class="list-group-item"}}Blog{{/link-to}}
-          {{#link-to "about"class="list-group-item"}}About{{/link-to}}
-          {{#link-to "contact"class="list-group-item"}}Contact{{/link-to}}
-          {{#link-to "blog" class="list-group-item"}}Gitlab{{/link-to}}
-          {{#link-to "blog" class="list-group-item"}}Savanah{{/link-to}}
-          {{#link-to "blog" class="list-group-item"}}Github{{/link-to}}
-        </div>
-      </div>
-    </div>
+    <h1>SpiralCode</h1>
+    <p class="lead">by madc0w</p>
   </div>
 </div>
+<main>
+  <div class="container">
+    <div class="sidebar">
+      <div class="list-group table-of-contents">
+        {{#link-to "blog" class="list-group-item"}}Blog{{/link-to}}
+        {{#link-to "about"class="list-group-item"}}About{{/link-to}}
+        {{#link-to "contact"class="list-group-item"}}Contact{{/link-to}}
+        {{#link-to "blog" class="list-group-item"}}Gitlab{{/link-to}}
+        {{#link-to "blog" class="list-group-item"}}Savanah{{/link-to}}
+        {{#link-to "blog" class="list-group-item"}}Github{{/link-to}}
+      </div>
+    </div>
+    <div class="content">
+      {{outlet}}
+    </div>
+  </div>
+</main>
 <footer>
   <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <ul class="list-unstyled">
-          <li class="pull-right">
-            <a href="#top">
-              Back to Top
-            </a>
-          </li>
-          <li>
-            {{#link-to "blog"}}Blog{{/link-to}}
-          </li>
-          <li>
-            {{#link-to "blog"}}RSS{{/link-to}}
-          </li>
-          <li>
-            {{#link-to "blog"}}Twitter{{/link-to}}
-          </li>
-          <li>
-            {{#link-to "blog"}}Gitlab{{/link-to}}
-          </li>
-          <li>
-            {{#link-to "blog"}}Github{{/link-to}}
-          </li>
-          <li>
-            {{#link-to "blog"}}Savannah{{/link-to}}
-          </li>
-        </ul>
-      </div>
+    <div class="list-links">
+      <ul class="list-unstyled">
+        <li class="pull-right">
+          <a href="#top">
+            Back to Top
+          </a>
+        </li>
+        <li>
+          {{#link-to "blog"}}Blog{{/link-to}}
+        </li>
+        <li>
+          {{#link-to "blog"}}RSS{{/link-to}}
+        </li>
+        <li>
+          {{#link-to "blog"}}Twitter{{/link-to}}
+        </li>
+        <li>
+          {{#link-to "blog"}}Gitlab{{/link-to}}
+        </li>
+        <li>
+          {{#link-to "blog"}}Github{{/link-to}}
+        </li>
+        <li>
+          {{#link-to "blog"}}Savannah{{/link-to}}
+        </li>
+      </ul>
     </div>
   </div>
 </footer>

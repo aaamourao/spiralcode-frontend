@@ -1,11 +1,13 @@
-export default function(/* server */) {
+//
+// Seed SpiralCode-Frontend DB
+//
+// made by madc0w
+//
+//import { faker } from 'ember-cli-manage';
 
-  /*
-    Seed your development database using your factories.
-    This data will not be loaded in your tests.
-
-    Make sure to define a factory for each model you want to create.
-  */
-
-  // server.createList('post', 10);
+export default function(server){
+  var posts = server.createList('post', 10, 'withComments');
+  posts.forEach(function(post){
+    server.create('tag', {posts: {post}})
+  });
 }

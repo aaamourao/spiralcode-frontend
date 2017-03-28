@@ -1,0 +1,9 @@
+//
+// Tag factory
+// made by madc0w
+//
+import { Factory, faker } from 'ember-cli-mirage';
+
+export default Factory.extend({
+  name: faker.hacker.noun()
+});
