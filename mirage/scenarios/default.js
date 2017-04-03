@@ -3,11 +3,20 @@
 //
 // made by madc0w
 //
-//import { faker } from 'ember-cli-manage';
 
 export default function(server){
-  var posts = server.createList('post', 10, 'withComments');
-  posts.forEach(function(post){
-    server.create('tag', {posts: {post}})
+  // Create six posts
+  let Posts = server.createList('post', 6);
+
+  // Create a tag that is related to all posts
+  let universalTag = server.create('tag', Posts);
+
+  // For each post, create two tags, and five comments
+  Posts.forEach(function(post){
+    let comments = server.createList('comment', 3, { 'post': post })
+    let tags = server.createList('tag', 2, { 'posts': { post } });
+    tags.push(universalTag);
+    post.update('tags', tags);
+    post.update('comments', comments);
   });
 }

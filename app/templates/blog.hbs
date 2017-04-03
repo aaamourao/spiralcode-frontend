@@ -1,5 +1,5 @@
 <p class="lead">Last posts</p>
-{{#each model.posts as |blogPostSynopsis|}}
-  {{post-list post=blogPostSynopsis tags=model.tags}}
+{{#each model as |postSyn|}}
+  {{post-list post=postSyn}}
 {{/each}}
 {{outlet}}

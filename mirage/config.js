@@ -4,6 +4,7 @@
 // made by madc0w
 //
 export default function() {
+  this.logging = true;
   this.namespace = '/api';
 
   this.get('/posts');

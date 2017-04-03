@@ -1,9 +1,9 @@
 <div class="jumbotron">
   <h1>{{post.title}}</h1>
   <p>{{post.content}}</p>
-  <p class="text-success">written by {{post-property-author post.author}} at {{post.date}}</p>
-  <p>
-  {{#each tags as |tag|}}
+  <p class="metablog">written by {{post-property-author post.author}} at {{post.date}}</p>
+  <p class="metablog">
+  {{#each post.tags as |tag|}}
     <span class="label label-success">{{tag.name}}</span>
   {{/each}}
   </p>

@@ -1,5 +1,11 @@
-import Serializer from './application';
+import JSONAPISerializer from './application';
 
-export default Serializer.extend({
-  include: ['tags', 'comments']
+export default JSONAPISerializer.extend({
+  include: function(request) {
+    if(request.queryParams.tags){
+      return ['tags'];
+    } else {
+      return [];
+    }
+  }
 });

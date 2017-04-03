@@ -4,10 +4,12 @@
 //
 // made by madc0w
 //
-import { Factory, faker, association } from 'ember-cli-mirage';
+import { Factory, faker, association, trait } from 'ember-cli-mirage';
 
 export default Factory.extend({
-  post: association(),
+  withPost: trait({
+    post: association()
+  }),
   email: faker.internet.email(),
   nick: faker.internet.userName(),
   text: faker.lorem.text(),

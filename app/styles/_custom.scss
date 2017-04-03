@@ -6,7 +6,6 @@
 // -----------------------------------------------------
 // -----------------------------------------------------
 //
-
 body {
     padding-top: 50px;
 }
@@ -65,6 +64,11 @@ main {
     @include make-xs-column(12);
     @include make-sm-column(6);
     @include make-md-column(3);
+  }
+  .metablog {
+    color: $brand-success;
+    font-size: 1.2em;
+    text-align: right;
   }
 }
 footer {

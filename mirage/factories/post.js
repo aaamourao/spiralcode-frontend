@@ -7,22 +7,22 @@
 import { Factory, faker, trait } from 'ember-cli-mirage';
 
 export default Factory.extend({
-  title(){
-    return faker.hacker.phrase();
-  },
+  title: faker.hacker.phrase,
   author: 'madc0w',
-  date(){
-    return faker.date.past();
-  },
-  content(){
-    return faker.lorem.text();
-  },
+  date: faker.date.past,
+  withExclusiveTag: trait({
+    afterCreate(post){
+      post.createTag('exclusive');
+    }
+  }),
+  content: faker.lorem.text,
   images(){
     return "TODO TODO TODO";
   },
-  withComments: trait({
-    afterCreate(post){
-      post.createComment('comment');
+  withCommentAndTag: trait({
+    afterCreate(server, post){
+      server.create('comment', post);
+      server.create('tag', post);
     }
   })
 });
