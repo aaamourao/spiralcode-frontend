@@ -1,4 +1,4 @@
-<p class="lead">Last posts</p>
+<p class="lead">Last posts {{model.meta.total}} {{model.meta.limit}}</p>
 {{#each model as |postSyn|}}
   {{post-list post=postSyn}}
 {{/each}}

@@ -8,22 +8,7 @@ export default function() {
   this.logging = true;
   this.namespace = '/api';
 
-  this.get('/posts', function({ posts }, request){
-    let allPosts = posts.all();
-    let json = this.serialize(allPosts.slice(
-      request.queryParams.offset,
-      request.queryParams.limit
-    ));
-
-    json.meta = {
-      page: 1,
-      total: allPosts.length,
-      limit: request.queryParams.limit
-    };
-
-    return json;
-  });
-
+  this.get('/posts');
   this.post('/posts/:id');
   this.post('/posts');
   this.put('/posts/:id');
