@@ -6,7 +6,7 @@
 
 export default function(server){
   // Create six posts
-  let Posts = server.createList('post', 6);
+  let Posts = server.createList('post', 12);
 
   // Create a tag that is related to all posts
   let universalTag = server.create('tag', Posts);

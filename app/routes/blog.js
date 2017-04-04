@@ -2,9 +2,13 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model(){
-    return this.get('store').findAll(
+    return this.get('store').query(
       'post',
-      { include: 'tags' }
+      {
+        include: 'tags',
+        limit: 5,
+        offset: 0
+      }
     );
   }
 });

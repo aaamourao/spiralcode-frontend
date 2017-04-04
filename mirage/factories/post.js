@@ -15,7 +15,7 @@ export default Factory.extend({
       post.createTag('exclusive');
     }
   }),
-  content: faker.lorem.text,
+  content: faker.hacker.phrase() + faker.lorem.text() ,
   images(){
     return "TODO TODO TODO";
   },
