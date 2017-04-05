@@ -1,5 +1,20 @@
-<p class="lead">Last posts {{model.meta.total}} {{model.meta.limit}}</p>
+<div class=well>
+<div class="extremity-layers">
+  <div class="title">
+    <p class="lead">Last posts</p>
+  </div>
+  <div class="pages">
+    {{paginate-collection totalPages=totalPages currentPage=number setCurrentPage=(action "setCurrentPage")}}
+  </div>
+</div>
 {{#each model as |postSyn|}}
   {{post-list post=postSyn}}
 {{/each}}
+<div class="extremity-layers">
+  <div class="title"></div>
+  <div class="pages">
+    {{paginate-collection totalPages=totalPages currentPage=number setCurrentPage=(action "setCurrentPage")}}
+  </div>
+</div>
 {{outlet}}
+</div>
